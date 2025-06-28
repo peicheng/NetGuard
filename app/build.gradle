@@ -8,7 +8,7 @@ android {
     compileSdkVersion = 34
 
     defaultConfig {
-        applicationId = "eu.faircode.netguard"
+        applicationId = "eu.faircode.netguard1"
         versionName = "2.332"
         minSdkVersion 22
         targetSdkVersion 34
