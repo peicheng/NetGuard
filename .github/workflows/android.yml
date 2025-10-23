@@ -1,0 +1,43 @@
+name: Android CI
+
+on:
+  push:
+    branches: [ "t2" ]
+  pull_request:
+    branches: [ "t2" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: gradle
+
+    - name: Setup signing configure
+      run: |
+        echo "${{ secrets.RELEASE_KEYSTORE }}" | base64 -d > release.keystore ;
+        echo "storeFile=../release.keystore" > keystore.properties ;
+        echo "storePassword=${{ secrets.RELEASE_KEYSTORE_PASSWORD }}" >> keystore.properties ;
+        echo "keyAlias=release" >> keystore.properties ;
+        echo "keyPassword=${{ secrets.RELEASE_KEYSTORE_PASSWORD }}" >> keystore.properties ;
+        
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: |
+       #./gradlew assembleRelease ;
+       ./gradlew assembleDebug -x lintVitalAnalyzeRelease ;
+      
+    - name: Upload APK To Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: apk
+        path: |
+          # app/build/outputs/apk/release/*
+          app/build/outputs/apk/*
