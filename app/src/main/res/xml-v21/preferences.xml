@@ -3,6 +3,8 @@
     <PreferenceScreen
         android:key="screen_defaults"
         android:title="@string/setting_defaults">
+        <eu.faircode.netguard.InsetPreference
+            android:key="top_inset" />
         <PreferenceCategory
             android:key="category_defaults"
             android:title="@string/setting_defaults">
@@ -38,6 +40,8 @@
     <PreferenceScreen
         android:key="screen_options"
         android:title="@string/setting_options">
+        <eu.faircode.netguard.InsetPreference
+            android:key="top_inset" />
         <PreferenceCategory
             android:key="category_options"
             android:title="@string/setting_options">
@@ -76,6 +80,8 @@
     <PreferenceScreen
         android:key="screen_network_options"
         android:title="@string/setting_network_options">
+        <eu.faircode.netguard.InsetPreference
+            android:key="top_inset" />
         <PreferenceCategory
             android:key="category_network_options"
             android:title="@string/setting_network_options">
@@ -153,6 +159,8 @@
     <PreferenceScreen
         android:key="screen_advanced_options"
         android:title="@string/setting_advanced_options">
+        <eu.faircode.netguard.InsetPreference
+            android:key="top_inset" />
         <PreferenceCategory
             android:key="category_advanced_options"
             android:title="@string/setting_advanced_options">
@@ -283,6 +291,8 @@
     <PreferenceScreen
         android:key="screen_stats"
         android:title="@string/setting_stats_category">
+        <eu.faircode.netguard.InsetPreference
+            android:key="top_inset" />
         <PreferenceCategory
             android:key="category_stats"
             android:title="@string/setting_stats_category">
@@ -312,6 +322,8 @@
     <PreferenceScreen
         android:key="screen_backup"
         android:title="@string/setting_backup">
+        <eu.faircode.netguard.InsetPreference
+            android:key="top_inset" />
         <PreferenceCategory
             android:key="category_backup"
             android:title="@string/setting_backup">
@@ -342,6 +354,8 @@
     <PreferenceScreen
         android:key="screen_development"
         android:title="Development">
+        <eu.faircode.netguard.InsetPreference
+            android:key="top_inset" />
         <PreferenceCategory
             android:key="category_development"
             android:title="Development">
@@ -367,6 +381,8 @@
     <PreferenceScreen
         android:key="screen_technical"
         android:title="@string/setting_technical">
+        <eu.faircode.netguard.InsetPreference
+            android:key="top_inset" />
         <PreferenceCategory
             android:key="category_technical"
             android:title="@string/setting_technical">

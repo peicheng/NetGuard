@@ -33,6 +33,10 @@ subprojects {
                     && !details.requested.name.contains('multidex')) {
                 details.useVersion "27.1.1"
             }
+
+            if (details.requested.group == 'org.jetbrains.kotlin') {
+                details.useVersion "1.8.22"
+            }
         }
     }
 }
